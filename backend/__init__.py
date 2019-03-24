@@ -1,9 +1,8 @@
 from flask import Flask
 
-from . import api
+from .api import api
 
 app = Flask(__name__)
-bot = 'd742ebeb1264cf17890ffa913e'
 
 
 @app.route('/')
