@@ -1,14 +1,8 @@
-from flask import Blueprint, request, redirect, url_for
-import requests
+from flask import Blueprint, request
 
-from .constants import BOT
+from .utility import sendToGroupMe
 
 api = Blueprint('api', __name__)
-
-
-def sendToGroupMe(string):
-    r = requests.post('https://api.groupme.com/v3/bots/post', data={'bot_id': BOT, 'text': string})
-    return r.status_code
 
 
 @api.route('/post', methods=['POST'])
